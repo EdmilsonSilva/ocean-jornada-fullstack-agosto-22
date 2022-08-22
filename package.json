@@ -1,7 +1,11 @@
 {
-    "name": "ocean-jornada-fullstack-agosto-22",
+    "name": "ocean-jornada-fullstack",
     "version": "1.0.0",
     "scripts": {
-        "postinstall": "npm install --prefix backend"
+        "install": "cd backend && npm install && cd ../frontend && npm install",
+        "start": "node backend/index.js",
+        "start:dev": "nodemon backend/index.js",
+        "client": "npm start --prefix frontend",
+        "dev": "concurrently \"npm run start:dev\" \"npm run client\""
     }
 }
